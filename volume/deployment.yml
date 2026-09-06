@@ -16,7 +16,14 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: python-sample-app-data:v1  
+        image: python-web-app:v1
+        volumeMounts:
+        - name: db-vol-connection
+          mountPath: /opt
         ports:
           - containerPort: 8000
+      volumes:
+      - name: db-vol-connection
+        configMap:
+         name: volume-demo
 
