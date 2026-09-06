@@ -18,16 +18,12 @@ spec:
       - name: python-app
         image: python-web-app:v1
         volumeMounts:
-          - name:  db-connection
-            mountPath: /opt
-          - name: db-secret-connection
-            mountPath: /opt/secret 
+        - name: db-vol-connection
+          mountPath: /opt
         ports:
           - containerPort: 8000
       volumes:
-      - name: db-connection
+      - name: db-vol-connection
         configMap:
-         name: test-cm
-      - name: db-secret-connection
-        secret:
-         secretName: test-secret  
+         name: volume-demo
+

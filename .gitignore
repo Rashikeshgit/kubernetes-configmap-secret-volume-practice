@@ -1,0 +1,13 @@
+*
+!.gitignore
+
+!env/
+!env/**
+
+!volume/
+!volume/**
+
+!secrets/
+!secrets/**
+
+!Dockerfile
